@@ -18,6 +18,7 @@ from django.urls import include
 from django.urls import path
 
 urlpatterns = [
-    path('colorch/', include('color_change.urls')),
-    path('admin/', admin.site.urls),
+    path(r'', include('color_change.urls')),
+    path(r'colorch/', include('color_change.urls')),
+    path(r'admin/', admin.site.urls),
 ]
