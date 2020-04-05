@@ -1,7 +1,11 @@
 from django.shortcuts import render
+from django.http import Http404
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_protect
 
 import cv2
 import numpy as np
+import uuid
 
 def bg_color_cvt(simg, dimg, color):
     # 蓝底->红底
@@ -39,24 +43,32 @@ def bg_color_cvt(simg, dimg, color):
     # cv2.imwrite(dimg, img)
 
 
-def colorch(request):
-    """底色转换页面"""
-    return render(request, 'color_ch.html')
+file_tmp = './tmp/'
 
-def upload(request):
+@csrf_protect
+def colorch(request):
     """底色转换"""
-    if request.method == 'POST':
+    if request.method != 'POST':
+        if not request.session.get('sid'):
+            uid = str(uuid.uuid4()).split('-')
+            request.session['sid'] = ''.join(uid)
+        return render(request, 'color_ch.html')
+    else:
         simg = ''
         dimg = ''
         color = ''
         bg_color_cvt(simg, dimg, color)
         return ''
-    else:
-        raise Exception
 
-def preview(request):
-    """预览"""
-    return ''
+def upload(request):
+    """底色转换"""
+    if request.method == 'POST':
+        img_name = file_tmp + str(request.session.session_key)
+        with open(img_name, 'wb') as f:
+            f.write(request.FILES['pic'])
+        return JsonResponse({'res': 'success'})
+    else:
+        raise Http404
 
 def download(request):
     """下载"""
