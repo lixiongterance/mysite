@@ -22,5 +22,6 @@ from django.urls import re_path
 urlpatterns = [
     path('colorch/', include(('color_change.urls', 'color_change'))),
     path('admin/', admin.site.urls),
+    path('utils/', include('homepage.urls_utils')),
     re_path('.*', include(('homepage.urls', 'index'))),
 ]

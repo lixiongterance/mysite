@@ -125,22 +125,22 @@ STATIC_URL = '/static/'
 
 
 # # 引擎
-# SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
-# # 使用的缓存别名（默认内存缓存，也可以是memcache），此处别名依赖缓存的设置
-# SESSION_CACHE_ALIAS = 'default'
-# # Session的cookie保存在浏览器上时的key，即：sessionid＝随机字符串（默认）
-# SESSION_COOKIE_NAME = "sessionid"
-# # Session的cookie保存的路径（默认）
-# SESSION_COOKIE_PATH = "/"
-# # Session的cookie保存的域名（默认）
-# SESSION_COOKIE_DOMAIN = None
-# # 是否Https传输cookie（默认）
-# SESSION_COOKIE_SECURE = False
-# # 是否Session的cookie只支持http传输（默认）
-# SESSION_COOKIE_HTTPONLY = True
-# # Session的cookie失效日期（2周）（默认）
-# # SESSION_COOKIE_AGE = 1209600
-# # 是否关闭浏览器使得Session过期（默认） 
-# SESSION_EXPIRE_AT_BROWSER_CLOSE = True
-# # 是否每次请求都保存Session，默认修改之后才保存（默认）
-# SESSION_SAVE_EVERY_REQUEST = False
+SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
+# 使用的缓存别名（默认内存缓存，也可以是memcache），此处别名依赖缓存的设置
+SESSION_CACHE_ALIAS = 'default'
+# Session的cookie保存在浏览器上时的key，即：sessionid＝随机字符串（默认）
+SESSION_COOKIE_NAME = "sessionid"
+# Session的cookie保存的路径（默认）
+SESSION_COOKIE_PATH = "/"
+# Session的cookie保存的域名（默认）
+SESSION_COOKIE_DOMAIN = None
+# 是否Https传输cookie（默认）
+SESSION_COOKIE_SECURE = False
+# 是否Session的cookie只支持http传输（默认）
+SESSION_COOKIE_HTTPONLY = True
+# Session的cookie失效日期
+SESSION_COOKIE_AGE = 600
+# 是否关闭浏览器使得Session过期（默认） 
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+# 是否每次请求都保存Session，默认修改之后才保存（默认）
+SESSION_SAVE_EVERY_REQUEST = False
