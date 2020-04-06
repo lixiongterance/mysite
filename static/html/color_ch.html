@@ -1,8 +1,17 @@
 {% load static %}
-
 <!doctype html>
 <html lang="en">
-  <head></head>
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <title>照片换底色</title>
+
+      <link rel="icon" href="{% static "image/favicon.ico" %}">
+      <link rel="icon" href="{% static "image/favicon-32x32.ico" %}" sizes="32x32" type="image/png">
+      <link rel="icon" href="{% static "image/favicon-16x16.ico" %}" sizes="16x16" type="image/png">
+      <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
+  </head>
+  
   <body>
     <form id="form1" action="/colorch/upload/" method="POST" enctype="multipart/form-data">
       {% csrf_token %}
@@ -26,5 +35,8 @@
 
       <input type="submit" value="Submit" />
     </form>
+
+    <script src="{% static "js/jquery.min.js" %}"></script>
+    <script src="{% static "js/bootstrap.bundle.min.js" %}"></script>
   </body>
 </html>

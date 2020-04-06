@@ -11,7 +11,7 @@ from . import utils
 
 def colorch(request):
     """底色转换页面"""
-    return render(request, 'color_ch.html')
+    return render(request, 'html/color_ch.html')
 
 
 @csrf_protect
