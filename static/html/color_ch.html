@@ -13,28 +13,30 @@
   </head>
   
   <body>
-    <form id="form1" action="/colorch/upload/" method="POST" enctype="multipart/form-data">
-      {% csrf_token %}
+    <div class="container-fluid">
+      <form class="form-group" id="form1" action="/colorch/upload/" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
 
-      <div>
-        <input type="file" id="img" name="img" accept="image/x-png,image/gif,image/jpeg"/>
-      </div>
+        <div>
+          <input type="file" id="img" name="img" accept="image/x-png,image/gif,image/jpeg"/>
+        </div>
 
-      <div>
-        <span>底色选择: </span>
-        <input type="radio" name="bg_color" id="optionsRadios1" value="white" checked="">白色
-        <input type="radio" name="bg_color" id="optionsRadios2" value="red">红色
-        <input type="radio" name="bg_color" id="optionsRadios3" value="blue">蓝色
-      </div>
+        <div>
+          <span>底色选择: </span>
+          <input type="radio" name="bg_color" id="optionsRadios1" value="white" checked="">白色
+          <input type="radio" name="bg_color" id="optionsRadios2" value="red">红色
+          <input type="radio" name="bg_color" id="optionsRadios3" value="blue">蓝色
+        </div>
 
-      <div>
-        <label>验证码：</label>
-        <input type="text" name="ver_code"/>
-        <img src="/utils/ver_code/" onclick="">
-      </div>
+        <div>
+          <label>验证码：</label>
+          <input type="text" name="ver_code"/>
+          <img src="/utils/ver_code/" onclick="">
+        </div>
 
-      <input type="submit" value="Submit" />
-    </form>
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
 
     <script src="{% static "js/jquery.min.js" %}"></script>
     <script src="{% static "js/bootstrap.bundle.min.js" %}"></script>
