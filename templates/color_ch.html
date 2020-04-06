@@ -5,17 +5,12 @@
     <form id="form1" action="/colorch/upload/" method="POST" enctype="multipart/form-data">
       {% csrf_token %}
 
-      <input type="file" id="img" name="img" accept="image/x-png,image/gif,image/jpeg,image/bmp"/>
+      <input type="file" id="img" name="img" accept="image/x-png,image/gif,image/jpeg"/>
 
       <span>底色选择: </span>
       <input type="radio" name="bg_color" id="optionsRadios1" value="white" checked="">白色
       <input type="radio" name="bg_color" id="optionsRadios2" value="red">红色
       <input type="radio" name="bg_color" id="optionsRadios3" value="blue">蓝色
-
-      <span>格式选择: </span>
-      <input type="radio" name="img_format" id="optionsRadios1" value=".jpg" checked="">jpg
-      <input type="radio" name="img_format" id="optionsRadios2" value=".png">png
-      <input type="radio" name="img_format" id="optionsRadios3" value="gif">gif
 
       <input type="submit" value="Submit" />
     </form>
