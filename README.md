@@ -15,14 +15,14 @@
 
 进入页面
 
-- 路径：/colorch/或者/（/会301到/colorch/）
+- 路径：`/colorch/`或者`/`（`/`会301到`/colorch/`）
 - 请求类型：GET/POST
 - 参数：无
 - 返回：color_ch.html
 
 文件上传并修改底色
 
-- 路径：/colorch/upload/
+- 路径：`/colorch/upload/`
 - 请求类型：POST
 - 参数：
     - img：用户选择的原图片文件
@@ -38,7 +38,7 @@
 
 获取验证码
 
-- 路径：/utils/ver_code/
+- 路径：`/utils/ver_code/`
 - 请求类型：GET/POST
 - 参数：无
 - 返回：
