@@ -7,55 +7,57 @@
     <title>照片换底色</title>
     
     <!-- <link rel="icon" href="{% static "image/favicon.ico" %}">
-      <link rel="icon" href="{% static "image/favicon-32x32.ico" %}" sizes="32x32" type="image/png">
-      <link rel="icon" href="{% static "image/favicon-16x16.ico" %}" sizes="16x16" type="image/png"> -->
-      <!-- <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet"> -->
-      <link href="../css/bootstrap.min.css" rel="stylesheet">
-      <link href="../css/color_ch.css" rel="stylesheet">
-    </head>
+    <link rel="icon" href="{% static "image/favicon-32x32.ico" %}" sizes="32x32" type="image/png">
+    <link rel="icon" href="{% static "image/favicon-16x16.ico" %}" sizes="16x16" type="image/png">
+    <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
+    <link href="{% static "css/color_ch.css" %}" rel="stylesheet"> -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/color_ch.css" rel="stylesheet">
+  </head>
     
-    <body>
-      <div class="container">
-        <div class="row">
-          <div class="col">
-            <form id="form1" action="/colorch/upload/" method="POST" enctype="multipart/form-data">
-              <!-- {% csrf_token %} -->
-              
-              <div class="container">
-                <div class="row">
-                  <!-- 上传图片 -->
-                  <div class="col-sm-12 col-md-4 col-lg-4">
-                    <div id="div_img_pre">
-                      <div id="div_img_file">
-                        <span id="img_span">
-                          <object data="../image/add-select.svg" type="image/svg+xml"></object>
-                          <br />
-                          选择图片
-                        </span>
-                        <input type="file" id="img" name="img" class="filepath" onchange="change_imgfile()" accept="image/*"/>
-                      </div>
-                      <img id="img_preview" src="#" onclick="change_img()"/>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <form id="form1" action="/colorch/upload/" method="POST" enctype="multipart/form-data">
+            <!-- {% csrf_token %} -->
+            
+            <div class="container">
+              <div class="row">
+                <!-- 上传图片 -->
+                <div class="col-sm-12 col-md-4 col-lg-4">
+                  <div id="div_img_pre">
+                    <div id="div_img_file">
+                      <span id="img_span">
+                        <!-- <object data="{% static "image/add-select.svg" %}" type="image/svg+xml"></object> -->
+                        <object data="../image/add-select.svg" type="image/svg+xml"></object>
+                        <br />
+                        选择图片
+                      </span>
+                      <input type="file" id="img" name="img" class="filepath" onchange="change_imgfile()" accept="image/*"/>
                     </div>
+                    <img id="img_preview" src="#" onclick="change_img()"/>
                   </div>
-                  
-                  <!-- 操作按钮 -->
-                  <div class="col-sm-12 col-md-4 col-lg-4">
-                    <div>
-                      <span>底色选择: </span>
-                      <input type="radio" name="bg_color" id="optionsRadios1" value="white" checked="">白色
-                      <input type="radio" name="bg_color" id="optionsRadios2" value="red">红色
-                      <input type="radio" name="bg_color" id="optionsRadios3" value="blue">蓝色
-                    </div>
-                    
-                    <div>
-                      <label>验证码：</label>
-                      <input type="text" name="ver_code"/>
-                      <img src="/utils/ver_code/" onclick="">
-                  </div>
-                  
-                  <input type="submit" value="Submit" />
                 </div>
                 
+                <!-- 操作按钮 -->
+                <div class="col-sm-12 col-md-4 col-lg-4">
+                  <div>
+                    <span>底色选择: </span>
+                    <input type="radio" name="bg_color" id="optionsRadios1" value="white" checked="">白色
+                    <input type="radio" name="bg_color" id="optionsRadios2" value="red">红色
+                    <input type="radio" name="bg_color" id="optionsRadios3" value="blue">蓝色
+                  </div>
+                  
+                  <div>
+                    <label>验证码：</label>
+                    <input type="text" name="ver_code"/>
+                    <img src="/utils/ver_code/" onclick="">
+                  </div>
+                
+                  <input type="submit" value="Submit" />
+                </div>
+              
                 <!-- 预览图片 -->
                 <div class="col-sm-12 col-md-4 col-lg-4">
                   <figure class="figure">
@@ -65,20 +67,20 @@
                     <title>Placeholder</title>
                     <rect width="100%" height="100%" fill="#868e96"></rect>
                   </svg>
-                </figure>
+                  </figure>
+                </div>
               </div>
             </div>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     </div>
-  </div>
   
-  <!-- <script src="{% static "js/jquery.min.js" %}"></script>
+    <!-- <script src="{% static "js/jquery.min.js" %}"></script>
     <script src="{% static "js/bootstrap.bundle.min.js" %}"></script>
     <script src="{% static "js/color_ch.js" %}"></script> -->
     <script src="../js/jquery.min.js"></script>
     <script src="../js/bootstrap.bundle.min.js"></script>
     <script src="../js/color_ch.js"></script>
   </body>
-  </html>
+</html>
