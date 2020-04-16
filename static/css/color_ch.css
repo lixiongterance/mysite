@@ -1,0 +1,33 @@
+#div_img_pre {
+  width: 200px;
+  height: 270px;
+  margin: 10px auto 0px auto;
+  border: 2px dashed #666363;
+  text-align: center;
+ }
+
+ #div_img_file {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  position: relative;
+ }
+
+ #img_span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+ }
+
+ .filepath {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+ }
+
+ #img_preview {
+  height: 100%;
+  width: 100%;
+  display: none;
+ }
